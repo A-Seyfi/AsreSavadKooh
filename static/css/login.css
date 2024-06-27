@@ -1,0 +1,116 @@
+@font-face {
+	font-family: vazir;
+	src: url(../vazir-font-v16.1.0/Vazir.ttf);
+}
+*{
+	font-family: vazir;
+}
+
+html,body {
+	height: 99.9%;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+a{
+	font-size: 16px;
+}
+body.my-login-page {
+	font-size: 14px;
+}
+.my-login-page .brand {
+	width: 90px;
+	height: 90px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: solid rgba(0, 0, 0, 0.8) 4px;
+	margin: 40px auto;
+	box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+	position: relative;
+	z-index: 1;
+}
+
+.my-login-page .brand img {
+	width: 100%;
+}
+
+.my-login-page .card-wrapper {
+	width: 400px;
+}
+
+.my-login-page .card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.my-login-page .card.fat {
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 17px;
+}
+
+.label{
+	display: flex;
+	justify-content: end;
+}
+.forgot_p{
+	margin: 15px 0 30px 0;
+}
+.rtl_text{
+	text-align: end;
+}
+.my-login-page .card .card-title {
+	text-align: center;
+	font-size: 28px;
+	margin-bottom: 30px;
+}
+.my-login-page .form-control {
+	border-width: 2.3px;
+}
+
+.my-login-page .form-group label {
+	width: 100%;
+}
+
+.my-login-page .btn.btn-block {
+	padding: 12px 10px;
+}
+
+.my-login-page .footer {
+	margin: 40px 0;
+	text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+	body{
+		background-size: 400% 100%;
+		background-position: -900px 0;
+	}
+	.my-login-page .card-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+	.my-login-page .card.fat {
+		font-size: 14px;
+	}
+	.my-login-page .card .card-title {
+		font-size: 24px;
+	}
+	.forgot_p{
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.my-login-page .card.fat {
+		padding: 0;
+	}
+
+	.my-login-page .card.fat .card-body {
+		padding: 15px;
+	}
+}

@@ -39,7 +39,7 @@ DL_mode.addEventListener(('click'), ()=>{
                 color_b.style.color = 'white'
             });
             
-            DL_status.src = 'images/dark.png'
+            DL_status.src = "/static/images/dark.png"
         }, 200)
     }
     else{
@@ -67,7 +67,7 @@ DL_mode.addEventListener(('click'), ()=>{
                 color_b.style.color = 'black'
             });
 
-            DL_status.src = 'images/light.png'
+            DL_status.src = "/static/images/light.png"
         }, 200)
     }
     

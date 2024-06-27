@@ -332,6 +332,7 @@ a:focus {
     .centered .item-title {
         padding: 100px 5%;
         position: relative;
+        display: flex;
         top: 0;
         -webkit-transform: translateY(0);
         -moz-transform: translateY(0);

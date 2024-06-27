@@ -2,7 +2,9 @@
   font-family: vazir;
   src: url(../vazir-font-v16.1.0/Vazir-Light.woff);
 }
-
+*{
+  font-family: vazir
+}
 
 
 /* -------------------------------------------------------------
