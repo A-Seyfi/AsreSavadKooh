@@ -2,10 +2,9 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class UserProfile(AbstractUser):
-    first_name = models.CharField(max_length=25)
-    last_name = models.CharField(max_length=25)
-    password = models.CharField(max_length=50)
-    email = models.EmailField(max_length=100)
+    usernamefield = models.CharField(max_length=25, verbose_name='نام کاربری')
+    password = models.CharField(max_length=50, verbose_name='رمز عبور')
+    email = models.EmailField(max_length=100, verbose_name='ایمیل')
     email_active_code = models.CharField(max_length=100, verbose_name='کد فعالسازی ایمیل')
 
     class Meta:

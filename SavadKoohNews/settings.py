@@ -96,7 +96,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa-IR'
 
 TIME_ZONE = 'UTC'
 
@@ -123,6 +123,6 @@ AUTH_USER_MODEL = 'users.UserProfile'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'onionarchitecturemvc@gmail.com'
-EMAIL_HOST_PASSWORD = 'djangotoplearn@pass'
+EMAIL_HOST_USER = 'asresavadkooh@gmail.com'
+EMAIL_HOST_PASSWORD = 'asresavadkooh@Admin'
 EMAIL_PORT = 587
