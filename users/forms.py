@@ -2,6 +2,13 @@ from django import forms
 from django.core import validators
 
 class RegisterForm(forms.Form):
+    username = forms.CharField(
+        label='نام کاربری',
+        validators=[
+            validators.MaxLengthValidator(100),
+            validators.EmailValidator,
+        ]
+    )
     email = forms.EmailField(
         label='ایمیل',
         widget=forms.EmailInput(),
