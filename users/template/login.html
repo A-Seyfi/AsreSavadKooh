@@ -19,36 +19,23 @@
 					</div>
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title">ورود</h4>
-							<form method="POST" class="my-login-validation" novalidate="">
+							<h4 class="card-title">ورود به حساب کاربری</h4>
+							<form method="POST" class="my-login-validation" action="{% url 'login_page' %}">
 								<div class="form-group">
-									<label class="label" for="email">ایمیل</label>
-									<input placeholder="Email" id="email" type="email" class="form-control" name="email" value="" required autofocus>
-									<div class="invalid-feedback error">
-										!ایمیل وارد شده نادرست است
-									</div>
-								</div>
+									{% csrf_token %}
+						
+									{#{{ login_form }}#}
 
-								<div class="form-group">
-									<label class="label" for="password">
-										رمز عبور
-									</label>
-									<input placeholder="Password" id="password" type="password" class="form-control" minlength="8" maxlength="20" name="password" required data-eye>
-									<a href="forgot.html" class="float-right forgot_p">
-										رمز عبور خود را فراموش کرده‌اید؟
-									</a>
-								    <div class="invalid-feedback">
-								    	!کلمه عبور نادرست است
-							    	</div>
+									{{ login_form.email.label_tag }}
+									{{ login_form.email }}
+									{{ login_form.email.errors }}
+									{{ login_form.password.label_tag }}
+									{{ login_form.password }}
+									{{ login_form.password.errors }}
+									<a href="{% url 'forget_password_page' %}" class="float-right forgot_p">رمز عبور خود را فراموش کرده‌اید؟</a>
+									<button type="submit" class="btn btn-primary btn-block">ورود</button>
 								</div>
-
-								<div class="form-group m-0">
-									<button type="submit" class="btn btn-primary btn-block">
-										ورود
-									</button>
-								</div>
-								<div class="mt-4 text-center">
-									ثبت نام نکرده‌اید؟ <a href="sign_up.html">ثبت نام</a>
+								<div class="mt-4 text-center">ثبت نام نکرده‌اید؟<a href="{% url 'register_page' %}">ثبت نام</a>
 								</div>
 							</form>
 						</div>
