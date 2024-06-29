@@ -7,6 +7,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', views.home, name='home_page'),
     path('admin/', admin.site.urls),
+    path('world/', views.world),
     path('article/', views.article),
     path('404/', views.custom_404_page),
 ]
