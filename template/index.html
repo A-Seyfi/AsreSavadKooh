@@ -46,21 +46,21 @@
         <!-- Navigation -->
         <nav class="nav-menu" role="navigation">
           <ul class="nav-links">
-            <li><a href="world" title="World">بین الملل</a>
-            <li><a href="#politics.html" title="Politics">سیاست</a></li>
-            <li><a href="#business.html" title="Business">اقتصاد</a></li>
-            <li><a href="#sport.html" title="Sport">ورزش</a></li>
-            <li><a href="#entertainment.html" title="Entertainment">محلی</a></li>
+            <li><a href="{% url 'world-page' %}" title="Business">بین الملل</a></li>
+            <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
+            <li><a href="{% url 'economy-page' %}" title="Business">اقتصاد</a></li>
+            <li><a href="{% url 'sport-page' %}" title="Sport">ورزش</a></li>
+            <li><a href="{% url 'local-page' %}" title="Entertainment">محلی</a></li>
             <li>
               <a href="#more" title="More">بیشتر...<span class="dropdown-toggle" aria-expanded="false"></span>
                 <span class="screen-reader-text">Expand child menu</span></a>
               <ul class="sub-menu">
-                <li><a href="#" title="Science">پژوهش</a></li>
-                <li><a href="#" title="Travel">گردشگری</a></li>
-                <li><a href="#" title="Health">سلامت</a></li>
-                <li><a href="#" title="Style">استایل</a></li>
-                <li><a href="#" title="Weather">آب و هوا</a></li>
-                <li><a href="#" title="Video">گالری</a></li>
+                <li><a href="{% url 'science-page' %}" title="Science">پژوهش</a></li>
+                <li><a href="{% url 'travel-page' %}" title="Travel">گردشگری</a></li>
+                <li><a href="{% url 'health-page' %}" title="Health">سلامت</a></li>
+                <li><a href="{% url 'style-page' %}" title="Style">استایل</a></li>
+                <li><a href="{% url 'weather-page' %}" title="Weather">آب و هوا</a></li>
+                <li><a href="{% url 'gallery-page' %}" title="Video">گالری</a></li>
               </ul>
             </li>
           </ul>
@@ -112,41 +112,22 @@
 
       <section class="world">
         <h2 class="content_color2">بین الملل</h2>
-        <div class="story story-1">
-          <a href="#">
-            <div class="story-img">
-              <img src="images/politics2.jpg" alt="Protesters">
-            </div>
-            <div class="story-headline">
-              <h3 class="color_b">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h3>
-              <p class="exact-time color_b">13:53</p>
-            </div>
-          </a>
-        </div>
 
-        <div class="story story-2">
-          <a href="#">
-            <div class="story-img">
-              <img src="images/politics10.jpg" alt="Police Officers">
-            </div>
-            <div class="story-headline">
-              <h3 class="color_b">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h3>
-              <p class="exact-time color_b">13:53</p>
-            </div>
-          </a>
-        </div>
+        {% for new in news.world %}
+          <div class="story story-1">
+            <a href="#">
+              <div class="story-img">
+                <img src="{{ new.cover_image.url }}" alt="Protesters">
+              </div>
+              <div class="story-headline">
+                <h3 class="color_b">{{ new.world.title }}</h3>
+                <p class="exact-time color_b">{{ new.created_at }}</p>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
 
-        <div class="story story-3">
-          <a href="#">
-            <div class="story-img">
-              <img src="images/world9.jpg" alt="Aerial view of the city">
-            </div>
-            <div class="story-headline">
-              <h3 class="color_b">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h3>
-              <p class="exact-time color_b">13:53</p>
-            </div>
-          </a>
-        </div>
+
       </section> <!-- End of class="world" -->
 
       <section class="politics">
@@ -386,17 +367,17 @@
       </ul>
 
       <ul class="main-footer-links">
-        <li><a href="#world" title="World">بین الملل</a>
-        <li><a href="#politics" title="Politics">سیاست</a></li>
-        <li><a href="#business" title="Business">اقتصاد</a></li>
-        <li><a href="#sport" title="Sport">ورزش</a></li>
-        <li><a href="#entertainment" title="Entertainment">محلی</a></li>
-        <li><a href="#science" title="Science">پژوهش</a></li>
-        <li><a href="#travel" title="Travel">گردشگری</a></li>
-        <li><a href="#health" title="Health">سلامت</a></li>
-        <li><a href="#style" title="Style">استایل</a></li>
-        <li><a href="#weather" title="Weather">آب و هوا</a></li>
-        <li><a href="#video" title="Video">گالری</a></li>
+        <li><a href="{% url 'world-page' %}" title="world">بین الملل</a></li>
+        <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
+        <li><a href="{% url 'economy-page' %}" title="Business">اقتصاد</a></li>
+        <li><a href="{% url 'sport-page' %}" title="Sport">ورزش</a></li>
+        <li><a href="{% url 'local-page' %}" title="Entertainment">محلی</a></li>
+        <li><a href="{% url 'science-page' %}" title="Science">پژوهش</a></li>
+        <li><a href="{% url 'travel-page' %}" title="Travel">گردشگری</a></li>
+        <li><a href="{% url 'health-page' %}" title="Health">سلامت</a></li>
+        <li><a href="{% url 'style-page' %}" title="Style">استایل</a></li>
+        <li><a href="{% url 'weather-page' %}" title="Weather">آب و هوا</a></li>
+        <li><a href="{% url 'gallery-page' %}" title="Video">گالری</a></li>
       </ul>
 
       <ul class="info-links">
