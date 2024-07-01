@@ -114,7 +114,7 @@
         <h2 class="content_color2">بین الملل</h2>
 
         {% for new in news.world %}
-          <div class="story story-1">
+          <div class="story">
             <a href="#">
               <div class="story-img">
                 <img src="{{ new.cover_image.url }}" alt="Protesters">
@@ -126,7 +126,6 @@
             </a>
           </div>
         {% endfor %}
-
 
       </section> <!-- End of class="world" -->
 
@@ -334,36 +333,18 @@
         </div>
       </section> <!-- End of class="entertainment" -->
 
-      <section class="more">
-        <h2 class="content_color2">بیشتر</h2>
-        <a href="#">
-          <div class="more-headline">
-            <h3 class="color_b">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h3>
-            <p class="exact-time color_b">13:53</p>
-          </div>
-        </a>
-
-        <a href="#">
-          <div class="more-headline">
-            <h3 class="color_b">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h3>
-            <p class="exact-time color_b">13:53</p>
-          </div>
-        </a>
-
-      </section> <!-- End of class="more" -->
-
     </main> <!-- End of class="main" -->
 
 
     <!-- Footer Links -->
     <div class="footer-links content_color1">
 
-      <ul class="social-media-links">
-        <li><a href="http://twitter.com"><span class="screen-reader-text">توییتر</span></a></li>
-        <li><a href="http://facebook.com"><span class="screen-reader-text">فیسبوک</span></a></li>
-        <li><a href="http://linkedin.com"><span class="screen-reader-text">لینکداین</span></a></li>
-        <li><a href="http://youtube.com"><span class="screen-reader-text">یوتیوب</span></a></li>
-        <li><a href="http://instagram.com"><span class="screen-reader-text">اینستاگرام</span></a></li>
+      <ul class="social-media-links" style="align-items: center;">
+        <li><a href="http://twitter.com"><img src="{% static 'images/twitter.png' %}" alt=""><span class="screen-reader-text">توییتر</span></a></li>
+         <li><a href="http://facebook.com"><img src="{% static 'images/facebook.png' %}" alt=""><span class="screen-reader-text">فیسبوک</span></a></li>
+        <li><a href="http://linkedin.com"><img src="{% static 'images/linkedin.png' %}" alt=""><span class="screen-reader-text">لینکداین</span></a></li>
+        <li><a href="http://youtube.com"><img src="{% static 'images/youtube.png' %}" alt=""><span class="screen-reader-text">یوتیوب</span></a></li>
+        <li><a href="http://instagram.com"><img src="{% static 'images/instagram.png' %}" alt=""><span class="screen-reader-text">اینستاگرام</span></a></li>
       </ul>
 
       <ul class="main-footer-links">

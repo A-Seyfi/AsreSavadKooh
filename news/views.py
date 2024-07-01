@@ -20,7 +20,7 @@ class homeListView(ListView):
             "health" : Article.objects.filter(category__url_title="health"),
             "style" : Article.objects.filter(category__url_title="style"),
             "weather" : Article.objects.filter(category__url_title="weather"),
-            "world" : Article.objects.filter(category__url_title="gallery"),
+            "gallery" : Article.objects.filter(category__url_title="gallery"),
         }
         return myset
 
