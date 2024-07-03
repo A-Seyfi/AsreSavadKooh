@@ -5,7 +5,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ["title", "category", "author", "created_at"]
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ["article", "user", "content", "created_at"]
+    list_display = ["article", "user", "text", "create_date"]
 
 
 admin.site.register(Article, ArticleAdmin)

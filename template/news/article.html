@@ -93,20 +93,16 @@
         <!-- Comments -->
         <div class="comments">
 
-          <p class="color_b"><a href="#">نظرها</a></p>
+          <p class="color_b"><a href="">نظرها</a></p>
           <h4 class="color_b">تازه ترین نظرها</h4>
           
-          <p class="comment-name color_b">عرفان۱۳۸۶</p>
-          <div class="comment-text">
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-            <p><small>پاسخ(۱)</small></p>
-          </div>
-
-          <p class="answer-name color_b">عمر۱۱۱</p>
-          <div class="answer-text">
-            <p>لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل عشوائي أخذتها من نص، لتكوّن كتيّب بمثابة دليل أو مرجع شكلي لهذه الأحرف.</p>
-          </div>
-
+          {% for comment in comments %}
+            <p class="comment-name color_b">{{ comment.author }}</p>
+            <div class="comment-text">
+              <p>{{ comment.text }}</p>
+              <i class="fa fa-clock-o"></i> 
+            </div>
+          {% endfor %}
         </div> <!-- End of class="comments" -->
 
 
@@ -114,12 +110,15 @@
         <h3 class="color_b">درج نظر</h3>
 
         <div class="form-container">
-          <form action="index.php">
-            <label for="name">نام</label>
-            <input type="text" id="name" name="name" placeholder="نام شما...">
-
-            <label for="comment">نظر</label>
-            <textarea id="comment" name="comment" placeholder="نظر شما..." style="height:200px"></textarea>
+          <form method="post" action="{% url 'article-detail' slug=news.slug  %}">
+            {% csrf_token %}
+            {{ form }}
+            <!-- {{ form.author.label_tag }}
+            {{ form.author }}
+            {{ form.author.errors }}
+            {{ form.content.label_tag }}
+            {{ form.content }}
+            {{ form.content.errors }} -->
 
             <input type="submit" value="انتشار نظر">
           </form>

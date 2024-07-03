@@ -42,8 +42,8 @@ class Article(models.Model):
 class Comment(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='خبر')
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, verbose_name='کاربر')
-    content = models.TextField(verbose_name='محتوا')
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد')
+    create_date = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ثبت', null=True)
+    text = models.TextField(verbose_name='متن نظر', null=True)
 
     class Meta:
         verbose_name = 'نظر'
