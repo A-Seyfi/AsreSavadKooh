@@ -7,9 +7,11 @@ let value = 100 / slide
 slide_container.style.width = `${slide * 50 + 1}%`
 
 setInterval(() => {
-   slide_container.style.transform = `translateX(-${value}%)`
-   value += translate
-   if(value == translate * 3){
+   if(slide != 1 & slide != 2){
+      slide_container.style.transform = `translateX(-${value}%)`
+      value += translate
+   }
+   if(value == translate * (slide - 1)){
       value = 0
    }
 }, 1800);

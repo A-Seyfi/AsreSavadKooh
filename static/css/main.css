@@ -368,6 +368,12 @@ img {
   padding-left: 15px;
 }
 
+.main h2 a{
+  float: left;
+  font-size: 1rem;
+  color: white;
+}
+
 .top-stories h2,
 .world h2,
 .politics h2,
@@ -411,6 +417,7 @@ img {
 
 .story{
   margin-bottom: 7px;
+  width: 50%;
 }
 .story a {
   display: grid;
@@ -758,41 +765,34 @@ input[type='submit'] {
   }
 
   .world {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .world h2 {
-    grid-column: 1/4;
-    grid-row: 1/2;
-  }
-
-  .world .story-1 {
-    grid-column: 1/4;
+    width: 98.5%;
   }
 
   .politics,
   .business,
   .sport,
   .entertainment{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
   }
   .news{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .politics h2,
   .business h2,
   .sport h2,
   .entertainment h2{
-    grid-column: 1/5;
-    grid-row: 1/2;
+    width: 100%;
   }
   .news h2{
-    grid-column: 1/5;
-    grid-row: 1/2;
+    width: 100%;
   }
 }
 
@@ -1009,12 +1009,12 @@ input[type='submit'] {
    */
 
   .world {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .world h2 {
-    grid-column: 1 / span 5;
+    width: 100%;
   }
 
   /*
@@ -1022,12 +1022,12 @@ input[type='submit'] {
    */
 
   .politics {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .politics h2 {
-    grid-column: 1 / span 5;
+    width: 100%;
   }
 
   .politics .story a {
@@ -1042,12 +1042,12 @@ input[type='submit'] {
    */
 
   .sport {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .sport h2 {
-    grid-column: 1 / span 5;
+    width: 100%;
   }
 
   .sport .story a {

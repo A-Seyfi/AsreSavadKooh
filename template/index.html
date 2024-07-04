@@ -111,7 +111,7 @@
       </div> <!-- End of class="top-news" -->
 
       <section class="world">
-        <h2 class="content_color2">بین الملل</h2>
+        <h2 class="content_color2">بین الملل<a href="{% url 'world-page' %}">بیشتر ...</a></h2>
 
         {% for new in news.world %}
           <div class="story">
@@ -130,7 +130,7 @@
       </section> <!-- End of class="world" -->
 
       <section class="politics">
-        <h2 class="content_color2">سیاست</h2>
+        <h2 class="content_color2">سیاست<a href="{% url 'politics-page' %}">بیشتر ...</a></h2>
 
         {% for new in news.politics %}
           <div class="story">
@@ -149,7 +149,7 @@
       </section> <!-- End of class="politics" -->
 
       <section class="business">
-        <h2 class="content_color2">اقتصاد</h2>
+        <h2 class="content_color2">اقتصاد<a href="{% url 'economy-page' %}">بیشتر ...</a></h2>
         
         {% for new in news.economy %}
         <div class="story">
@@ -167,7 +167,7 @@
       </section> <!-- End of class="business" -->
 
       <section class="sport">
-        <h2 class="content_color2">ورزش</h2>
+        <h2 class="content_color2">ورزش<a href="{% url 'sport-page' %}">بیشتر ...</a></h2>
 
       {% for new in news.sport %}
         <div class="story">
@@ -185,7 +185,7 @@
       </section> <!-- End of class="sport" -->
 
       <section class="entertainment">
-        <h2 class="content_color2">محلی</h2>
+        <h2 class="content_color2">محلی<a href="{% url 'local-page' %}">بیشتر ...</a></h2>
 
         {% for new in news.local %}
           <div class="story">
@@ -232,10 +232,7 @@
       </ul>
 
       <ul class="info-links">
-        <li><a href="#terms-of-use" title="Terms of Use">همکاری</a></li>
-        <li><a href="#privacy-policy" title="Privacy Policy">سیاست های حریم خصوصی</a></li>
         <li><a href="#about-us" title="About Us">درباره ما</a></li>
-        <li><a href="#advertising" title="Advertising">تبلیغات</a></li>
       </ul>
 
       <ul class="our-address">

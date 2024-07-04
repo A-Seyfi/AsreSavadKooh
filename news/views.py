@@ -156,7 +156,7 @@ def news_detail(request, news_id):
             author = form.cleaned_data['author']
             content = form.cleaned_data['content']
             Comment.objects.create(news=news, author=author, content=content)
-            return redirect('article_detail', news_id=news_id)
+            return redirect('news_detail', news_id=news_id)
     else:
         form = CommentForm()
 
