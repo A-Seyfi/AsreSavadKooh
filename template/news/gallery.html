@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گالری</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,700|Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+
+</head>
+
+<body id="top" class="body_color">
+    <div class="content-wrap main_color">
+    
+        <!-- Header -->
+        <header role="banner">
+    
+          <section class="nav-section content_color1">
+    
+            <!-- Logo -->
+            <div class="logo">
+              <a href="{% url 'home_page' %}" title="Frivizn logo">گالری</a>
+            </div>
+    
+            <div id="DL_mode" class="bg_white">
+              <div id="DL_btn" class="bg_black">
+                  <img id="DL_status" src="{% static 'images/light.png' %}" alt="">
+              </div>
+            </div>
+            <!-- Navigation -->
+            <nav class="nav-menu" role="navigation">
+              <ul class="nav-links">
+                <li><a href="{% url 'home_page' %}" title="Home">خانه</a></li>
+                <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
+                <li><a href="{% url 'world-page' %}" title="Business">بین الملل</a></li>
+                <li><a href="{% url 'sport-page' %}" title="Sport">ورزش</a></li>
+                <li><a href="{% url 'local-page' %}" title="Entertainment">محلی</a></li>
+                <li>
+                  <a title="More">بیشتر...<span class="dropdown-toggle" aria-expanded="false"></span>
+                    <span class="screen-reader-text">Expand child menu</span></a>
+                  <ul class="sub-menu">
+                    <li><a href="{% url 'economy-page' %}" title="Business">اقتصاد</a></li>
+                    <li><a href="{% url 'science-page' %}" title="Science">پژوهش</a></li>
+                    <li><a href="{% url 'health-page' %}" title="Health">سلامت</a></li>
+                    <li><a href="{% url 'style-page' %}" title="Style">استایل</a></li>
+                    <li><a href="{% url 'weather-page' %}" title="Weather">آب و هوا</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="burger">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+                <div class="line-3"></div>
+              </div>
+            </nav>
+          </section> <!-- end of class="nav-section"-->
+    
+        </header>
+    
+        <!-- Main -->
+        <main class="main" role="main">
+    
+            <div class="page-content">
+                <main class="page-content__main">
+                    <section class="page-content__gallery">
+                        <div class="gallery">
+                            <div class="gallery__inner">
+                                <div class="gallery__flow">
+        
+                                    <div class="gallery__isle active">
+                                        <div class="gallery__isle-inner">
+                                            <div class="gallery__isle-content">
+                                                <figure class="gallery__preview">
+                                                    <div class="gallery__preview-image">
+                                                        <img src="{% static 'images/sport7.jpg' %}" alt="">
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="gallery_title">این متن برای تست 1 است</div>
+                                    </div>
+        
+                                    <div class="gallery__isle">
+                                        <div class="gallery__isle-inner">
+                                            <div class="gallery__isle-content">
+                                                <figure class="gallery__preview">
+                                                    <div class="gallery__preview-image">
+                                                        <img src="{% static 'images/world2.jpg' %}" alt="">
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="gallery_title">این متن برای تست 2 است</div>
+                                    </div>
+        
+                                    <div class="gallery__isle">
+                                        <div class="gallery__isle-inner">
+                                            <div class="gallery__isle-content">
+                                                <figure class="gallery__preview">
+                                                    <div class="gallery__preview-image">
+                                                        <img src="{% static 'images/world5.jpg' %}" alt="">
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="gallery_title">این متن برای تست 3 است</div>
+                                    </div>
+        
+                                    <div class="gallery__isle">
+                                        <div class="gallery__isle-inner">
+                                            <div class="gallery__isle-content">
+                                                <figure class="gallery__preview">
+                                                    <div class="gallery__preview-image">
+                                                        <img src="{% static 'images/business7.jpg' %}" alt="">
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="gallery_title">این متن برای تست 4 است</div>
+                                    </div>
+        
+                                    <div class="gallery__isle">
+                                        <div class="gallery__isle-inner">
+                                            <div class="gallery__isle-content">
+                                                <figure class="gallery__preview">
+                                                    <div class="gallery__preview-image">
+                                                        <img src="{% static 'images/world9.jpg' %}" alt="">
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="gallery_title">این متن برای تست 5 است</div>
+                                    </div>
+        
+                                    <div class="gallery__isle">
+                                        <div class="gallery__isle-inner">
+                                            <div class="gallery__isle-content">
+                                                <figure class="gallery__preview">
+                                                    <div class="gallery__preview-image">
+                                                        <img src="{% static 'images/entertainment4.jpg' %}" alt="">
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="gallery_title">این متن برای تست 6 است</div>
+                                    </div>
+                                    
+                                    <div class="gallery__isle">
+                                        <div class="gallery__isle-inner">
+                                            <div class="gallery__isle-content">
+                                                <figure class="gallery__preview">
+                                                    <div class="gallery__preview-image">
+                                                        <img src="{% static 'images/business10.jpg' %}" alt="">
+                                                    </div>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div class="gallery_title">این متن برای تست 7 است</div>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+
+            <div class="show_selected_img body_color">
+                <img id="active_pic" src="{% static 'images/sport7.jpg' %}" alt="">
+                <div id="active_title" class="gallery_title color_b">این متن برای تست 1 است</div>
+            </div>
+            
+        </main> <!-- End of class="main" -->
+    
+    
+        <!-- Footer Links -->
+        <div class="footer-links content_color1">
+    
+          <ul class="social-media-links" style="align-items: center;">
+            <li><a href="http://twitter.com"><img src="{% static 'images/twitter.png' %}" alt=""><span class="screen-reader-text">توییتر</span></a></li>
+       	    <li><a href="http://facebook.com"><img src="{% static 'images/facebook.png' %}" alt=""><span class="screen-reader-text">فیسبوک</span></a></li>
+            <li><a href="http://linkedin.com"><img src="{% static 'images/linkedin.png' %}" alt=""><span class="screen-reader-text">لینکداین</span></a></li>
+            <li><a href="http://youtube.com"><img src="{% static 'images/youtube.png' %}" alt=""><span class="screen-reader-text">یوتیوب</span></a></li>
+            <li><a href="http://instagram.com"><img src="{% static 'images/instagram.png' %}" alt=""><span class="screen-reader-text">اینستاگرام</span></a></li>
+          </ul>
+    
+          <ul class="main-footer-links">
+            <li><a href="{% url 'home_page' %}" title="Home">خانه</a></li>
+            <li><a href="{% url 'world-page' %}" title="world">بین الملل</a></li>
+            <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
+            <li><a href="{% url 'economy-page' %}" title="Business">اقتصاد</a></li>
+            <li><a href="{% url 'sport-page' %}" title="Sport">ورزش</a></li>
+            <li><a href="{% url 'local-page' %}" title="Entertainment">محلی</a></li>
+            <li><a href="{% url 'science-page' %}" title="Science">پژوهش</a></li>
+            <li><a href="{% url 'travel-page' %}" title="Travel">گردشگری</a></li>
+            <li><a href="{% url 'health-page' %}" title="Health">سلامت</a></li>
+            <li><a href="{% url 'style-page' %}" title="Style">استایل</a></li>
+            <li><a href="{% url 'weather-page' %}" title="Weather">آب و هوا</a></li>
+            <li><a href="{% url 'gallery-page' %}" title="Video">گالری</a></li>
+          </ul>
+    
+          <ul class="info-links">
+            <li><a href="#terms-of-use" title="Terms of Use">همکاری</a></li>
+            <li><a href="#privacy-policy" title="Privacy Policy">سیاست های حریم خصوصی</a></li>
+            <li><a href="#about-us" title="About Us">درباره ما</a></li>
+            <li><a href="#advertising" title="Advertising">تبلیغات</a></li>
+          </ul>
+    
+          <ul class="our-address">
+            <li>آدرس ما</li>
+            <li>سوادکوه، زیرآب</li>
+            <li>امامزاده عبدالحق، پلاک ۱</li>
+            <li>۱۲۳-۴۵۶-۷۸۹</li>
+          </ul>
+    
+        </div> <!-- End of class="footer-links" -->
+    
+        <!-- Footer Credit -->
+        <footer class="content_color2" role="contentinfo">
+          <p class="content_color2">2024 &copy; by Sajad & Abolfazl</p>
+          <a class="scroll-top" href="#top"></a>
+        </footer>
+    
+    </div> <!-- end of class="content-wrap" -->
+    
+      <!-- <script src="js/modernizr.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/gallery.js' %}"></script>
+    
+</body>
+</html>

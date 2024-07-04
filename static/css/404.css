@@ -334,6 +334,7 @@ a:focus {
         position: relative;
         display: flex;
         top: 0;
+        align-items: center;
         -webkit-transform: translateY(0);
         -moz-transform: translateY(0);
         -ms-transform: translateY(0);
