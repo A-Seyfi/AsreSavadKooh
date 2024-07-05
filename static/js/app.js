@@ -28,11 +28,11 @@ DL_mode.addEventListener(('click'), ()=>{
             });
 
             content_color1.forEach(content_color1 => {
-                content_color1.style.backgroundColor = '#12a12e'
+                content_color1.style.backgroundColor = '#278EA5'
             });
 
             content_color2.forEach(content_color2 => {
-                content_color2.style.backgroundColor = '#bb1919'
+                content_color2.style.backgroundColor = '#3e57ba'
             });
 
             color_b.forEach(color_b => {
@@ -48,19 +48,19 @@ DL_mode.addEventListener(('click'), ()=>{
         DL_btn.style.marginLeft = '3px'
         setTimeout(()=>{
             body_color.forEach(body_color => {
-                body_color.style.backgroundColor = '#B1D8B7'
+                body_color.style.backgroundColor = '#f7f2e0'
             });
 
             main_color.forEach(main_color => {
-                main_color.style.backgroundColor = '#94C973'
+                main_color.style.backgroundColor = '#E5E1DA'
             });
 
             content_color1.forEach(content_color1 => {
-                content_color1.style.backgroundColor = '#76B947'
+                content_color1.style.backgroundColor = '#3e57ba'
             });
 
             content_color2.forEach(content_color2 => {
-                content_color2.style.backgroundColor = '#2F5233'
+                content_color2.style.backgroundColor = '#5570de'
             });
 
             color_b.forEach(color_b => {

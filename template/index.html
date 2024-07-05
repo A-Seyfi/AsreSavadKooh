@@ -81,10 +81,11 @@
 
         <section class="latest-news">
           <div class="headline">
+            <img src="{% static 'images/sport7.jpg' %}" alt="">
             <p>خبر فوری</p>
             {% for new in news.urgent1 %}
-              <a href="{% url 'article-detail' pk=new.id  %}">
-                <h1>{{ new.title }}</h1>
+              <a class="body_color" href="{% url 'article-detail' pk=new.id  %}">
+                <h1 class="color_b">{{ new.title }}</h1>
               </a>
             {% endfor %}
           </div>
@@ -92,25 +93,30 @@
 
         <section class="top-stories">
           <h2 class="content_color2">داغ ترین ها</h2>
-          <div class="headline headline-1">
+
+          <div class="headline body_color">
+            <img src="{% static 'images/world10.jpg' %}" alt="">
             {% for new in news.urgent2 %}
             <a href="{% url 'article-detail' pk=new.id  %}">
-              <h1>{{ new.title }}</h1>
-            </a>
-            {% endfor %}
-          </div>
-          <div class="headline headline-2">
-            {% for new in news.urgent3 %}
-            <a href="{% url 'article-detail' pk=new.id  %}">
-              <h1>{{ new.title }}</h1>
+              <h1 class="color_b">{{ new.title }}</h1>
             </a>
             {% endfor %}
           </div>
 
-          <div class="headline headline-3">
+          <div class="headline body_color">
+            <img src="{% static 'images/world10.jpg' %}" alt="">
+            {% for new in news.urgent3 %}
+            <a href="{% url 'article-detail' pk=new.id  %}">
+              <h1 class="color_b">{{ new.title }}</h1>
+            </a>
+            {% endfor %}
+          </div>
+
+          <div class="headline body_color">
+            <img src="{% static 'images/world10.jpg' %}" alt="">
             {% for new in news.urgent4 %}
             <a href="{% url 'article-detail' pk=new.id  %}">
-              <h1>{{ new.title }}</h1>
+              <h1 class="color_b">{{ new.title }}</h1>
             </a>
             {% endfor %}
           </div>

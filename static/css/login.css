@@ -21,9 +21,13 @@ a{
 body.my-login-page {
 	font-size: 14px;
 }
+form{
+	display: flex;
+	flex-direction: column;
+}
 .my-login-page .brand {
-	width: 90px;
-	height: 90px;
+	width: 130px;
+	height: 130px;
 	overflow: hidden;
 	border-radius: 50%;
 	border: solid rgba(0, 0, 0, 0.8) 4px;
@@ -34,7 +38,11 @@ body.my-login-page {
 }
 
 .my-login-page .brand img {
-	width: 100%;
+	width: 150%;
+	height: 150%;
+	position: absolute;
+	left: -22%;
+	top: -25%;
 }
 
 .my-login-page .card-wrapper {
@@ -45,6 +53,10 @@ body.my-login-page {
 	border-color: transparent;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
+.my-login-page .card input{
+	width: 100%;
+	margin-bottom: 20px;
+}
 
 .my-login-page .card.fat {
 	background-color: rgba(255, 255, 255, 0.7);
@@ -53,15 +65,15 @@ body.my-login-page {
 	font-size: 17px;
 }
 
-.label{
+label{
 	display: flex;
-	justify-content: end;
+	justify-content: start;
 }
 .forgot_p{
 	margin: 15px 0 30px 0;
 }
 .rtl_text{
-	text-align: end;
+	text-align: start;
 }
 .my-login-page .card .card-title {
 	text-align: center;
@@ -70,10 +82,6 @@ body.my-login-page {
 }
 .my-login-page .form-control {
 	border-width: 2.3px;
-}
-
-.my-login-page .form-group label {
-	width: 100%;
 }
 
 .my-login-page .btn.btn-block {
@@ -86,6 +94,10 @@ body.my-login-page {
 }
 
 @media screen and (max-width: 425px) {
+	.my-login-page .brand{
+		width: 90px;
+		height: 90px;
+	}
 	body{
 		background-size: 400% 100%;
 		background-position: -900px 0;
