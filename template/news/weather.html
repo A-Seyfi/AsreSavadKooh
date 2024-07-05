@@ -75,7 +75,7 @@
 
                       {% for new in news %}
                         {% if new.slide_show %}
-                          <a href="{% url 'article-detail' slug=new.slug  %}">
+                          <a href="{% url 'article-detail' pk=new.id  %}">
                             <div class="slide" id="slide11">
                                 <img src="{{ new.cover_image.url }}">
                                 <div class="news_details">
@@ -99,7 +99,7 @@
           
             {% for new in news %}
                 <div class="story">
-                  <a href="{% url 'article-detail' slug=new.slug  %}">
+                  <a href="{% url 'article-detail' pk=new.id  %}">
                     <div class="story-img">
                 {% if new.cover_image %}
                     <img src="{{ new.cover_image.url }}" alt="">
