@@ -14,5 +14,6 @@ urlpatterns = [
     path('style/', views.StyleListView.as_view(), name='style-page'),
     path('weather/', views.WeatherListView.as_view(), name='weather-page'),
     path('gallery/', views.GalleryListView.as_view(), name='gallery-page'),
-    path('<slug:slug>/', views.ArticleDetailView.as_view(), name='article-detail'),
+    path('<pk>/', views.ArticleDetailView.as_view(), name='article-detail'),
+    path('<pk>/add-article-comment', views.add_article_comment, name='add_article_comment')
 ]

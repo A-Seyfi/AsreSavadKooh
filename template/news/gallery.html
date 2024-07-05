@@ -66,105 +66,31 @@
     
         <!-- Main -->
         <main class="main" role="main">
-    
+
+
+
             <div class="page-content">
                 <main class="page-content__main">
                     <section class="page-content__gallery">
                         <div class="gallery">
                             <div class="gallery__inner">
                                 <div class="gallery__flow">
-        
-                                    <div class="gallery__isle active">
-                                        <div class="gallery__isle-inner">
-                                            <div class="gallery__isle-content">
-                                                <figure class="gallery__preview">
-                                                    <div class="gallery__preview-image">
-                                                        <img src="{% static 'images/sport7.jpg' %}" alt="">
-                                                    </div>
-                                                </figure>
+
+                                    {% for image in images %}
+                                        <div class="gallery__isle active">
+                                            <div class="gallery__isle-inner">
+                                                <div class="gallery__isle-content">
+                                                    <figure class="gallery__preview">
+                                                        <div class="gallery__preview-image">
+                                                            <img src="{{ image.image.url }}" alt="">
+                                                        </div>
+                                                    </figure>
+                                                </div>
                                             </div>
+                                            <div class="gallery_title">{{ image.title }}</div>
                                         </div>
-                                        <div class="gallery_title">این متن برای تست 1 است</div>
-                                    </div>
-        
-                                    <div class="gallery__isle">
-                                        <div class="gallery__isle-inner">
-                                            <div class="gallery__isle-content">
-                                                <figure class="gallery__preview">
-                                                    <div class="gallery__preview-image">
-                                                        <img src="{% static 'images/world2.jpg' %}" alt="">
-                                                    </div>
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="gallery_title">این متن برای تست 2 است</div>
-                                    </div>
-        
-                                    <div class="gallery__isle">
-                                        <div class="gallery__isle-inner">
-                                            <div class="gallery__isle-content">
-                                                <figure class="gallery__preview">
-                                                    <div class="gallery__preview-image">
-                                                        <img src="{% static 'images/world5.jpg' %}" alt="">
-                                                    </div>
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="gallery_title">این متن برای تست 3 است</div>
-                                    </div>
-        
-                                    <div class="gallery__isle">
-                                        <div class="gallery__isle-inner">
-                                            <div class="gallery__isle-content">
-                                                <figure class="gallery__preview">
-                                                    <div class="gallery__preview-image">
-                                                        <img src="{% static 'images/business7.jpg' %}" alt="">
-                                                    </div>
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="gallery_title">این متن برای تست 4 است</div>
-                                    </div>
-        
-                                    <div class="gallery__isle">
-                                        <div class="gallery__isle-inner">
-                                            <div class="gallery__isle-content">
-                                                <figure class="gallery__preview">
-                                                    <div class="gallery__preview-image">
-                                                        <img src="{% static 'images/world9.jpg' %}" alt="">
-                                                    </div>
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="gallery_title">این متن برای تست 5 است</div>
-                                    </div>
-        
-                                    <div class="gallery__isle">
-                                        <div class="gallery__isle-inner">
-                                            <div class="gallery__isle-content">
-                                                <figure class="gallery__preview">
-                                                    <div class="gallery__preview-image">
-                                                        <img src="{% static 'images/entertainment4.jpg' %}" alt="">
-                                                    </div>
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="gallery_title">این متن برای تست 6 است</div>
-                                    </div>
-                                    
-                                    <div class="gallery__isle">
-                                        <div class="gallery__isle-inner">
-                                            <div class="gallery__isle-content">
-                                                <figure class="gallery__preview">
-                                                    <div class="gallery__preview-image">
-                                                        <img src="{% static 'images/business10.jpg' %}" alt="">
-                                                    </div>
-                                                </figure>
-                                            </div>
-                                        </div>
-                                        <div class="gallery_title">این متن برای تست 7 است</div>
-                                    </div>
-        
+                                    {% endfor %}
+
                                 </div>
                             </div>
                         </div>
@@ -174,7 +100,7 @@
 
             <div class="show_selected_img body_color">
                 <img id="active_pic" src="{% static 'images/sport7.jpg' %}" alt="">
-                <div id="active_title" class="gallery_title color_b">این متن برای تست 1 است</div>
+                <div id="active_title" class="gallery_title color_b">برای مشاهده گزارش روی تصویر مورد نظر کلیک کنید</div>
             </div>
             
         </main> <!-- End of class="main" -->

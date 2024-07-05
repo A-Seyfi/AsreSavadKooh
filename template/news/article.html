@@ -97,7 +97,7 @@
           <h4 class="color_b">تازه ترین نظرها</h4>
           
           {% for comment in comments %}
-            <p class="comment-name color_b">{{ comment.author }}</p>
+            <p class="comment-name color_b">{{ comment.user }}</p>
             <div class="comment-text">
               <p>{{ comment.text }}</p>
               <i class="fa fa-clock-o"></i> 
@@ -107,22 +107,19 @@
 
 
         <!-- Comment Form -->
-        <h3 class="color_b">درج نظر</h3>
-
-        <div class="form-container">
-          <form method="post" action="{% url 'article-detail' slug=news.slug  %}">
-            {% csrf_token %}
-            {{ form }}
-            <!-- {{ form.author.label_tag }}
-            {{ form.author }}
-            {{ form.author.errors }}
-            {{ form.content.label_tag }}
-            {{ form.content }}
-            {{ form.content.errors }} -->
-
-            <input type="submit" value="انتشار نظر">
-          </form>
-        </div> <!-- End of  class="form-container" -->
+        {% if request.user.is_authenticated %}
+          <h3 class="color_b">درج نظر</h3>
+          <div class="form-container">
+                <label for="comment">نظر</label>
+                <textarea id="commentText" name="comment" placeholder="نظر شما..." style="height:200px"></textarea>
+                <input type="submit" value="ثبت نظر" onclick="sendArticleComment({{ news.id }})">
+          </div> 
+        {% else %}
+          <div class="alert alert-warning">
+            برای درج نظر می بایست <a href="{% url 'login_page' %}">لاگین</a> کنید
+          </div>
+        {% endif %}
+        <!-- End of  class="form-container" -->
 
       </article> <!-- End of  class="article" -->
 
@@ -182,6 +179,7 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="{% static 'js/main.js' %}"></script>
   <script src="{% static 'js/app.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
 
 </body>
 </html>

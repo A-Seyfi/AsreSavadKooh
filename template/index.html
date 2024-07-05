@@ -82,29 +82,37 @@
         <section class="latest-news">
           <div class="headline">
             <p>خبر فوری</p>
-            <a href="article.html">
-              <h1>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h1>
-            </a>
+            {% for new in news.urgent1 %}
+              <a href="{% url 'article-detail' pk=new.id  %}">
+                <h1>{{ new.title }}</h1>
+              </a>
+            {% endfor %}
           </div>
         </section> <!-- End of class="latest-news" -->
 
         <section class="top-stories">
           <h2 class="content_color2">داغ ترین ها</h2>
           <div class="headline headline-1">
-            <a href="#">
-              <h1>لورم ایپسوم متن ساختگی</h1>
+            {% for new in news.urgent2 %}
+            <a href="{% url 'article-detail' pk=new.id  %}">
+              <h1>{{ new.title }}</h1>
             </a>
+            {% endfor %}
           </div>
           <div class="headline headline-2">
-            <a href="#">
-              <h1>لورم ایپسوم متن ساختگی</h1>
+            {% for new in news.urgent3 %}
+            <a href="{% url 'article-detail' pk=new.id  %}">
+              <h1>{{ new.title }}</h1>
             </a>
+            {% endfor %}
           </div>
 
           <div class="headline headline-3">
-            <a href="#">
-              <h1>لورم ایپسوم متن ساختگی</h1>
+            {% for new in news.urgent4 %}
+            <a href="{% url 'article-detail' pk=new.id  %}">
+              <h1>{{ new.title }}</h1>
             </a>
+            {% endfor %}
           </div>
         </section> <!-- End of class="top-stories" -->
 
@@ -115,7 +123,7 @@
 
         {% for new in news.world %}
           <div class="story">
-            <a href="{% url 'article-detail' slug=new.slug  %}">
+            <a href="{% url 'article-detail' pk=new.id  %}">
               <div class="story-img">
                 <img src="{{ new.cover_image.url }}" alt="Protesters">
               </div>
@@ -134,7 +142,7 @@
 
         {% for new in news.politics %}
           <div class="story">
-            <a href="{% url 'article-detail' slug=new.slug  %}">
+            <a href="{% url 'article-detail' pk=new.id  %}">
               <div class="story-img">
                 <img src="{{ new.cover_image.url }}" alt="Protesters">
               </div>
@@ -153,7 +161,7 @@
         
         {% for new in news.economy %}
         <div class="story">
-            <a href="{% url 'article-detail' slug=new.slug  %}">
+            <a href="{% url 'article-detail' pk=new.id  %}">
               <div class="story-img">
                 <img src="{{ new.cover_image.url }}" alt="Protesters">
               </div>
@@ -171,7 +179,7 @@
 
       {% for new in news.sport %}
         <div class="story">
-          <a href="{% url 'article-detail' slug=new.slug  %}">
+          <a href="{% url 'article-detail' pk=new.id  %}">
             <div class="story-img">
               <img src="{{ new.cover_image.url }}" alt="Protesters">
             </div>
@@ -189,7 +197,7 @@
 
         {% for new in news.local %}
           <div class="story">
-            <a href="{% url 'article-detail' slug=new.slug  %}">
+            <a href="{% url 'article-detail' pk=new.id  %}">
               <div class="story-img">
                 <img src="{{ new.cover_image.url }}" alt="Protesters">
               </div>
