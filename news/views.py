@@ -6,7 +6,7 @@ from django.urls import reverse
 from .models import Article, Comment, Gallery
 
 class homeListView(ListView):
-    template_name = 'index.html'
+    template_name = 'about-us.html'
     model = Article
     context_object_name = 'news'
     ordering = ['created_at']

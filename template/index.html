@@ -24,9 +24,6 @@
 
   <div class="content-wrap main_color">
 
-    <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
 
     <!-- Header -->
     <header role="banner">
@@ -43,9 +40,15 @@
               <img id="DL_status" src="{% static 'images/light.png' %}" alt="">
           </div>
         </div>
+
+
         <!-- Navigation -->
         <nav class="nav-menu" role="navigation">
           <ul class="nav-links">
+
+            <li><a href="" title="register">ورود / ثبت نام</a></li>
+            <li><a href="" title="logout">خروج</a></li>
+
             <li><a href="{% url 'world-page' %}" title="Business">بین الملل</a></li>
             <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
             <li><a href="{% url 'economy-page' %}" title="Business">اقتصاد</a></li>
@@ -71,6 +74,11 @@
           </div>
         </nav>
       </section> <!-- end of class="nav-section"-->
+
+      <!-- <section class="user-section content_color1">
+        <button class="reg">ورود / ثبت نام</button>
+        <button class="exit">خروج</button>
+      </section> -->
 
     </header>
 
@@ -246,7 +254,7 @@
       </ul>
 
       <ul class="info-links">
-        <li><a href="#about-us" title="About Us">درباره ما</a></li>
+        <li><a href="about-us" title="About Us">درباره ما</a></li>
       </ul>
 
       <ul class="our-address">

@@ -182,6 +182,14 @@ img {
   justify-content: space-around;
 }
 
+
+.user{
+  border-radius: 10px;
+  border-style: none;
+  background-color: #0c0c0c00;
+  color: white;
+  font-size: 16px;
+}
 /* 
  * Logo
  */
@@ -1149,6 +1157,15 @@ input[type='submit'] {
   }
   .top-stories{
     display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .logo{
+    font-size: 13px;
+  }
+  .user{
+    font-size: 13px;
   }
 }
 

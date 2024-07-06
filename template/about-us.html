@@ -1,0 +1,146 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="fa" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="The latest international news from Frivizn, featuring top stories from around the world and breaking news, as it happens.">
+  <meta name="author" content="dukibu">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>خانه | سوادکوه نیوز</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:400,700|Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/about-us.css' %}">
+
+</head>
+
+<body id="top" class="body_color">
+
+  <div class="content-wrap main_color">
+
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Header -->
+    <header role="banner">
+
+      <section class="nav-section content_color1">
+
+        <!-- Logo -->
+        <div class="logo">
+          <img src="{% static 'images/logo.jpg' %}" alt="logo">
+        </div>
+
+        <div id="DL_mode" class="bg_white">
+          <div id="DL_btn" class="bg_black">
+              <img id="DL_status" src="{% static 'images/light.png' %}" alt="">
+          </div>
+        </div>
+        <!-- Navigation -->
+        <nav class="nav-menu" role="navigation">
+          <ul class="nav-links">
+            <li><a href="{% url 'world-page' %}" title="Business">بین الملل</a></li>
+            <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
+            <li><a href="{% url 'economy-page' %}" title="Business">اقتصاد</a></li>
+            <li><a href="{% url 'sport-page' %}" title="Sport">ورزش</a></li>
+            <li><a href="{% url 'local-page' %}" title="Entertainment">محلی</a></li>
+            <li>
+              <a href="#more" title="More">بیشتر...<span class="dropdown-toggle" aria-expanded="false"></span>
+                <span class="screen-reader-text">Expand child menu</span></a>
+              <ul class="sub-menu">
+                <li><a href="{% url 'science-page' %}" title="Science">پژوهش</a></li>
+                <li><a href="{% url 'travel-page' %}" title="Travel">گردشگری</a></li>
+                <li><a href="{% url 'health-page' %}" title="Health">سلامت</a></li>
+                <li><a href="{% url 'style-page' %}" title="Style">استایل</a></li>
+                <li><a href="{% url 'weather-page' %}" title="Weather">آب و هوا</a></li>
+                <li><a href="{% url 'gallery-page' %}" title="Video">گالری</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="burger">
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+          </div>
+        </nav>
+      </section> <!-- end of class="nav-section"-->
+
+    </header>
+
+    <!-- Main -->
+    <main class="main" role="main">
+
+      <section class="about-us">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quas corrupti quae consequatur quo aperiam culpa a veniam laborum aspernatur mollitia et eligendi rerum nihil. Unde ab corporis eligendi esse.</p>
+        
+        <div class="links">
+            <a href=""><div>test@gmail.com</div><img src="{% static 'images/email.svg' %}" alt=""></a>
+            <a href=""><div>02133882233</div><img src="{% static 'images/phone.svg' %}" alt=""></a>
+        </div>
+    </section>
+
+    </main> <!-- End of class="main" -->
+
+
+    <!-- Footer Links -->
+    <div class="footer-links content_color1">
+
+      <ul class="social-media-links" style="align-items: center;">
+        <li><a href="http://twitter.com"><img src="{% static 'images/twitter.png' %}" alt=""><span class="screen-reader-text">توییتر</span></a></li>
+         <li><a href="http://facebook.com"><img src="{% static 'images/facebook.png' %}" alt=""><span class="screen-reader-text">فیسبوک</span></a></li>
+        <li><a href="http://linkedin.com"><img src="{% static 'images/linkedin.png' %}" alt=""><span class="screen-reader-text">لینکداین</span></a></li>
+        <li><a href="http://youtube.com"><img src="{% static 'images/youtube.png' %}" alt=""><span class="screen-reader-text">یوتیوب</span></a></li>
+        <li><a href="http://instagram.com"><img src="{% static 'images/instagram.png' %}" alt=""><span class="screen-reader-text">اینستاگرام</span></a></li>
+      </ul>
+
+      <ul class="main-footer-links">
+        <li><a href="{% url 'world-page' %}" title="world">بین الملل</a></li>
+        <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
+        <li><a href="{% url 'economy-page' %}" title="Business">اقتصاد</a></li>
+        <li><a href="{% url 'sport-page' %}" title="Sport">ورزش</a></li>
+        <li><a href="{% url 'local-page' %}" title="Entertainment">محلی</a></li>
+        <li><a href="{% url 'science-page' %}" title="Science">پژوهش</a></li>
+        <li><a href="{% url 'travel-page' %}" title="Travel">گردشگری</a></li>
+        <li><a href="{% url 'health-page' %}" title="Health">سلامت</a></li>
+        <li><a href="{% url 'style-page' %}" title="Style">استایل</a></li>
+        <li><a href="{% url 'weather-page' %}" title="Weather">آب و هوا</a></li>
+        <li><a href="{% url 'gallery-page' %}" title="Video">گالری</a></li>
+      </ul>
+
+      <ul class="info-links">
+        <li><a href="about-us" title="About Us">درباره ما</a></li>
+      </ul>
+
+      <ul class="our-address">
+        <li>آدرس ما</li>
+        <li>سوادکوه، زیرآب</li>
+        <li>امامزاده عبدالحق، پلاک ۱</li>
+        <li>۱۲۳-۴۵۶-۷۸۹</li>
+      </ul>
+
+    </div> <!-- End of class="footer-links" -->
+
+    <!-- Footer Credit -->
+    <footer class="content_color2" role="contentinfo">
+      <p class="content_color2">2024 &copy; by Sajad & Abolfazl</p>
+      <a class="scroll-top" href="#top"></a>
+    </footer>
+
+  </div> <!-- end of class="content-wrap" -->
+
+  <!-- <script src="js/modernizr.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>
