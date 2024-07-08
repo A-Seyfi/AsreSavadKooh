@@ -37,6 +37,11 @@
             <!-- Navigation -->
             <nav class="nav-menu" role="navigation">
               <ul class="nav-links">
+                {% if request.user.is_authenticated %}
+                  <li><a href="{% url 'logout_page' %}" title="logout">خروج</a></li>
+                {% else %}
+                  <li><a href="{% url 'register_page' %}" title="register">ورود / ثبت نام</a></li>
+                {% endif %}
                 <li><a href="{% url 'home_page' %}" title="Home">خانه</a></li>
                 <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
                 <li><a href="{% url 'world-page' %}" title="Business">بین الملل</a></li>
