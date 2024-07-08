@@ -27,12 +27,10 @@ class RegisterForm(forms.Form):
 
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(
-        label='ایمیل',
-        widget=forms.EmailInput(),
+    username = forms.CharField(
+        label='نام کاربری',
         validators=[
             validators.MaxLengthValidator(100),
-            validators.EmailValidator
         ]
     )
     password = forms.CharField(

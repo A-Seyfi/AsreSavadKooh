@@ -72,21 +72,18 @@ class LoginView(View):
     def post(self, request: HttpRequest):
         login_form = LoginForm(request.POST)
         if login_form.is_valid():
-            user_email = login_form.cleaned_data.get('email')
+            user_name = login_form.cleaned_data.get('username')
             user_pass = login_form.cleaned_data.get('password')
-            user: UserProfile = UserProfile.objects.filter(email__iexact=user_email).first()
+            user: UserProfile = UserProfile.objects.filter(usernamefield=user_name).first()
             if user is not None:
-                if not user.is_active:
-                    login_form.add_error('email', 'حساب کاربری شما فعال نشده است')
+                is_password_correct = user.check_password(user_pass)
+                if is_password_correct:
+                    login(request, user)
+                    return redirect(reverse('home_page'))
                 else:
-                    is_password_correct = user.check_password(user_pass)
-                    if is_password_correct:
-                        login(request, user)
-                        return redirect(reverse('home_page'))
-                    else:
-                        login_form.add_error('email', 'ایمیل و یا رمز عبور اشتباه است')
+                    login_form.add_error('username', 'نام کاربری و یا رمز عبور اشتباه است')
             else:
-                login_form.add_error('email', 'کاربری با مشخصات وارد شده یافت نشد')
+                login_form.add_error('username', 'کاربری با مشخصات وارد شده یافت نشد')
 
         context = {
             'login_form': login_form
