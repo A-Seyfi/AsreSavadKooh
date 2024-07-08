@@ -1,12 +1,12 @@
+from django.views import View
+from django.http import Http404, HttpRequest
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from django.views import View
-from .models import UserProfile
 from django.utils.crypto import get_random_string
-from django.http import Http404, HttpRequest
 from django.contrib.auth import login, logout
 from utils.email_service import send_email
 
+from .models import UserProfile
 from users.forms import RegisterForm, LoginForm, ForgotPasswordForm, ResetPasswordForm
 
 
@@ -153,3 +153,5 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect(reverse('login_page'))
+
+

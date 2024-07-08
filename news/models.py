@@ -65,3 +65,16 @@ class Gallery(models.Model):
 
     def __str__(self):
         return f"{self.author} - {self.create_date}"
+    
+
+class AboutUs(models.Model):
+    intro_text = models.TextField(verbose_name='متن معرفی', null=True)
+    email = models.EmailField(max_length=100, verbose_name='ایمیل ارتباطی', null=True)
+    phone_number = models.CharField(max_length=100, verbose_name='شماره تلفن ارتباظی', null=True)
+
+    class Meta:
+        verbose_name = 'صفحه درباره'
+        verbose_name_plural = 'مدیریت صفحه درباره'
+
+    def __str__(self):
+        return f"{self.email} - {self.phone_number}"

@@ -10,7 +10,7 @@
   <meta name="author" content="dukibu">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>خانه | سوادکوه نیوز</title>
+  <title>درباره ما | سوادکوه نیوز</title>
 
   <link href="https://fonts.googleapis.com/css?family=Exo+2:400,700|Open+Sans&display=swap" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
@@ -77,16 +77,16 @@
 
     <!-- Main -->
     <main class="main" role="main">
+      {% for dats in data %}
+        <section class="about-us">
+          <p>{{ dats.intro_text }}</p>
 
-      <section class="about-us">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, quas corrupti quae consequatur quo aperiam culpa a veniam laborum aspernatur mollitia et eligendi rerum nihil. Unde ab corporis eligendi esse.</p>
-        
-        <div class="links">
-            <a href=""><div>test@gmail.com</div><img src="{% static 'images/email.svg' %}" alt=""></a>
-            <a href=""><div>02133882233</div><img src="{% static 'images/phone.svg' %}" alt=""></a>
-        </div>
-    </section>
-
+          <div class="links">
+              <a><div>{{ dats.email }}</div><img src="{% static 'images/email.svg' %}" alt=""></a>
+              <a><div>{{ dats.phone_number }}</div><img src="{% static 'images/phone.svg' %}" alt=""></a>
+          </div>
+        </section>
+      {% endfor %}
     </main> <!-- End of class="main" -->
 
 
@@ -116,7 +116,7 @@
       </ul>
 
       <ul class="info-links">
-        <li><a href="about-us" title="About Us">درباره ما</a></li>
+        <li><a href="{% url 'about_page' %}" title="About Us">درباره ما</a></li>
       </ul>
 
       <ul class="our-address">
@@ -130,7 +130,7 @@
 
     <!-- Footer Credit -->
     <footer class="content_color2" role="contentinfo">
-      <p class="content_color2">2024 &copy; by Sajad & Abolfazl</p>
+      <p class="content_color2">2024 &copy;تمامی حقوق برای خبرگذاری مستقل عصرسوادکوه محفوظ است</p>
       <a class="scroll-top" href="#top"></a>
     </footer>
 
