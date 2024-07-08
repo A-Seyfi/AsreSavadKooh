@@ -32,7 +32,7 @@
 
         <!-- Logo -->
         <div class="logo">
-          <a href="index.html" title="Frivizn logo">سوادکوه نیوز</a>
+          <a href="{% url 'home_page' %}" title="Frivizn logo">سوادکوه نیوز</a>
         </div>
 
         <div id="DL_mode" class="bg_white">
@@ -45,10 +45,11 @@
         <!-- Navigation -->
         <nav class="nav-menu" role="navigation">
           <ul class="nav-links">
-
-            <li><a href="" title="register">ورود / ثبت نام</a></li>
-            <li><a href="" title="logout">خروج</a></li>
-
+            {% if request.user.is_authenticated %}
+              <li><a href="{% url 'logout_page' %}" title="logout">خروج</a></li>
+            {% else %}
+              <li><a href="{% url 'register_page' %}" title="register">ورود / ثبت نام</a></li>
+            {% endif %}
             <li><a href="{% url 'world-page' %}" title="Business">بین الملل</a></li>
             <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
             <li><a href="{% url 'economy-page' %}" title="Business">اقتصاد</a></li>
@@ -254,7 +255,7 @@
       </ul>
 
       <ul class="info-links">
-        <li><a href="about-us" title="About Us">درباره ما</a></li>
+        <li><a href="{% url 'about_page' %}" title="About Us">درباره ما</a></li>
       </ul>
 
       <ul class="our-address">
@@ -268,7 +269,7 @@
 
     <!-- Footer Credit -->
     <footer class="content_color2" role="contentinfo">
-      <p class="content_color2">2024 &copy; by Sajad & Abolfazl</p>
+      <p class="content_color2">2024 &copy;تمامی حقوق برای خبرگذاری مستقل عصرسوادکوه محفوظ است</p>
       <a class="scroll-top" href="#top"></a>
     </footer>
 

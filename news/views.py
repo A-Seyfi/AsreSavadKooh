@@ -1,12 +1,12 @@
 from django.http import HttpRequest, HttpResponse
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.views import View
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from .models import Article, Comment, Gallery
+from .models import Article, Comment, Gallery, AboutUs
 
 class homeListView(ListView):
-    template_name = 'about-us.html'
+    template_name = 'index.html'
     model = Article
     context_object_name = 'news'
     ordering = ['created_at']
@@ -159,3 +159,13 @@ def add_article_comment(request: HttpRequest, **kwargs):
         new_comment.save()
 
     return HttpResponse('response')
+
+
+class AboutUsView(TemplateView):
+    template_name = 'about-us.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutUsView, self).get_context_data(**kwargs)
+        data: AboutUs = AboutUs.objects.all().order_by('id')
+        context['data'] = data
+        return context
