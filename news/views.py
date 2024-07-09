@@ -154,8 +154,8 @@ def add_article_comment(request: HttpRequest, **kwargs):
     if request.user.is_authenticated:
         article_comment = request.GET.get('article_comment')
         article_id = request.GET.get('article_id')
-        print(article_id, article_comment)
-        new_comment = Comment(article_id=article_id, text=article_comment, user_id=request.user.id)
+        # print(article_id, article_comment)
+        new_comment = Comment(article_id=article_id, text=article_comment, user=request.user)
         new_comment.save()
 
     return HttpResponse('response')

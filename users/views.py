@@ -24,6 +24,7 @@ class RegisterView(View):
         if register_form.is_valid():
             user_email = register_form.cleaned_data.get('email')
             user_password = register_form.cleaned_data.get('password')
+            user_name = register_form.cleaned_data.get('username')
             user: bool = UserProfile.objects.filter(email__iexact=user_email).exists()
             if user:
                 register_form.add_error('email', 'ایمیل وارد شده تکراری می باشد')
@@ -31,11 +32,11 @@ class RegisterView(View):
                 new_user = UserProfile(
                     email=user_email,
                     email_active_code=get_random_string(72),
-                    is_active=False,
-                    usernamefield=user_email)
+                    is_active=True,
+                    username=user_name)
                 new_user.set_password(user_password)
                 new_user.save()
-                send_email('فعالسازی حساب کاربری', new_user.email, {'user': new_user}, 'email/activate.html')
+                # send_email('فعالسازی حساب کاربری', new_user.email, {'user': new_user}, 'email/activate.html')
                 return redirect(reverse('login_page'))
 
         context = {
@@ -74,7 +75,7 @@ class LoginView(View):
         if login_form.is_valid():
             user_name = login_form.cleaned_data.get('username')
             user_pass = login_form.cleaned_data.get('password')
-            user: UserProfile = UserProfile.objects.filter(usernamefield=user_name).first()
+            user: UserProfile = UserProfile.objects.filter(username=user_name).first()
             if user is not None:
                 is_password_correct = user.check_password(user_pass)
                 if is_password_correct:
