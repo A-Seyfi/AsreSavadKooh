@@ -36,8 +36,8 @@ class RegisterView(View):
                     username=user_name)
                 new_user.set_password(user_password)
                 new_user.save()
-                # send_email('فعالسازی حساب کاربری', new_user.email, {'user': new_user}, 'email/activate.html')
-                return redirect(reverse('login_page'))
+                login(request, new_user)
+                return redirect(reverse('home_page'))
 
         context = {
             'register_form': register_form
@@ -150,6 +150,6 @@ class ResetPasswordView(View):
 class LogoutView(View):
     def get(self, request):
         logout(request)
-        return redirect(reverse('login_page'))
+        return redirect(reverse('home_page'))
 
 

@@ -4,6 +4,7 @@
 }
 *{
 	font-family: vazir;
+	word-wrap: break-word;
 }
 
 html,body {

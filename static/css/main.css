@@ -3,7 +3,8 @@
   src: url(../vazir-font-v16.1.0/Vazir-Light.woff);
 }
 *{
-  font-family: vazir
+  font-family: vazir;
+  word-wrap: break-word;
 }
 
 
@@ -628,10 +629,14 @@ p.intro-text {
 }
 
 .comment-text {
+  width: fit-content;
   padding-left: 10px;
   background: var(--gray80);
   border-radius: 5px;
   font-size: 0.8rem;
+}
+.comment-text .fa{
+  padding: 2%;
 }
 .answer-text {
   padding-left: 10px;
@@ -955,6 +960,7 @@ input[type='submit'] {
   }
 
   .comment-text {
+    width: auto;
     padding-left: 20px;
     font-size: 1rem;
   }
@@ -1146,6 +1152,12 @@ input[type='submit'] {
 }
 
 @media only screen and (max-width: 500px) {
+  .comment-text {
+    width: auto;
+  }
+  .comment-text p{
+    word-wrap: break-word;
+  }
   .slider{
     width: 98.1%;
     height: auto;
