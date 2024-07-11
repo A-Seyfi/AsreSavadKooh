@@ -4,10 +4,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.utils.crypto import get_random_string
 from django.contrib.auth import login, logout
-from utils.email_service import send_email
 
 from .models import UserProfile
-from users.forms import RegisterForm, LoginForm, ForgotPasswordForm, ResetPasswordForm
+from users.forms import RegisterForm, LoginForm
 
 
 class RegisterView(View):
@@ -46,21 +45,6 @@ class RegisterView(View):
         return render(request, 'users/register.html', context)
 
 
-class ActivateAccountView(View):
-    def get(self, request, email_active_code):
-        user: UserProfile = UserProfile.objects.filter(email_active_code__iexact=email_active_code).first()
-        if user is not None:
-            if not user.is_active:
-                user.is_active = True
-                user.email_active_code = get_random_string(72)
-                user.save()
-                return redirect(reverse('login_page'))
-            else:
-                pass
-
-        return render(request, '404.html')
-
-
 class LoginView(View):
     def get(self, request):
         login_form = LoginForm()
@@ -93,63 +77,75 @@ class LoginView(View):
         return render(request, 'users/login.html', context)
 
 
-class ForgetPasswordView(View):
-    def get(self, request: HttpRequest):
-        forget_pass_form = ForgotPasswordForm()
-        context = {'forget_pass_form': forget_pass_form}
-        return render(request, 'users/forgot_password.html', context)
-
-    def post(self, request: HttpRequest):
-        forget_pass_form = ForgotPasswordForm(request.POST)
-        if forget_pass_form.is_valid():
-            user_email = forget_pass_form.cleaned_data.get('email')
-            user: UserProfile = UserProfile.objects.filter(email__iexact=user_email).first()
-            if user is not None:
-                send_email('بازیابی کلمه عبور', user.email, {'user': user}, 'email/resetpass.html')
-                return redirect(reverse('home_page'))
-
-        context = {'forget_pass_form': forget_pass_form}
-        return render(request, 'users/forgot_password.html', context)
-
-
-class ResetPasswordView(View):
-    def get(self, request: HttpRequest, active_code):
-        user: UserProfile = UserProfile.objects.filter(email_active_code__iexact=active_code).first()
-        if user is None:
-            return redirect(reverse('login_page'))
-
-        reset_pass_form = ResetPasswordForm()
-
-        context = {
-            'reset_pass_form': reset_pass_form,
-            'user': user
-        }
-        return render(request, 'users/reset_password.html', context)
-
-    def post(self, request: HttpRequest, active_code):
-        reset_pass_form = ResetPasswordForm(request.POST)
-        user: UserProfile = UserProfile.objects.filter(email_active_code__iexact=active_code).first()
-        if reset_pass_form.is_valid():
-            if user is None:
-                return redirect(reverse('login_page'))
-            user_new_pass = reset_pass_form.cleaned_data.get('password')
-            user.set_password(user_new_pass)
-            user.email_active_code = get_random_string(72)
-            user.is_active = True
-            user.save()
-            return redirect(reverse('login_page'))
-
-        context = {
-            'reset_pass_form': reset_pass_form,
-            'user': user
-        }
-
-        return render(request, 'users/reset_password.html', context)
-
-
 class LogoutView(View):
     def get(self, request):
         logout(request)
         return redirect(reverse('home_page'))
 
+# class ForgetPasswordView(View):
+#     def get(self, request: HttpRequest):
+#         forget_pass_form = ForgotPasswordForm()
+#         context = {'forget_pass_form': forget_pass_form}
+#         return render(request, 'users/forgot_password.html', context)
 
+#     def post(self, request: HttpRequest):
+#         forget_pass_form = ForgotPasswordForm(request.POST)
+#         if forget_pass_form.is_valid():
+#             user_email = forget_pass_form.cleaned_data.get('email')
+#             user: UserProfile = UserProfile.objects.filter(email__iexact=user_email).first()
+#             if user is not None:
+#                 send_email('بازیابی کلمه عبور', user.email, {'user': user}, 'email/resetpass.html')
+#                 return redirect(reverse('home_page'))
+
+#         context = {'forget_pass_form': forget_pass_form}
+#         return render(request, 'users/forgot_password.html', context)
+
+
+# class ResetPasswordView(View):
+#     def get(self, request: HttpRequest, active_code):
+#         user: UserProfile = UserProfile.objects.filter(email_active_code__iexact=active_code).first()
+#         if user is None:
+#             return redirect(reverse('login_page'))
+
+#         reset_pass_form = ResetPasswordForm()
+
+#         context = {
+#             'reset_pass_form': reset_pass_form,
+#             'user': user
+#         }
+#         return render(request, 'users/reset_password.html', context)
+
+#     def post(self, request: HttpRequest, active_code):
+#         reset_pass_form = ResetPasswordForm(request.POST)
+#         user: UserProfile = UserProfile.objects.filter(email_active_code__iexact=active_code).first()
+#         if reset_pass_form.is_valid():
+#             if user is None:
+#                 return redirect(reverse('login_page'))
+#             user_new_pass = reset_pass_form.cleaned_data.get('password')
+#             user.set_password(user_new_pass)
+#             user.email_active_code = get_random_string(72)
+#             user.is_active = True
+#             user.save()
+#             return redirect(reverse('login_page'))
+
+#         context = {
+#             'reset_pass_form': reset_pass_form,
+#             'user': user
+#         }
+
+#         return render(request, 'users/reset_password.html', context)
+
+
+# class ActivateAccountView(View):
+#     def get(self, request, email_active_code):
+#         user: UserProfile = UserProfile.objects.filter(email_active_code__iexact=email_active_code).first()
+#         if user is not None:
+#             if not user.is_active:
+#                 user.is_active = True
+#                 user.email_active_code = get_random_string(72)
+#                 user.save()
+#                 return redirect(reverse('login_page'))
+#             else:
+#                 pass
+
+#         return render(request, '404.html')
