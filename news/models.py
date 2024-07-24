@@ -12,7 +12,7 @@ class Category(models.Model):
         verbose_name_plural = 'دسته بندی ها'
 
     def __str__(self):
-        return f'( {self.name} - {self.url_title} - {self.id})'
+        return f'( {self.name} - {self.url_title})'
 
 
 class Article(models.Model):
@@ -51,30 +51,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.article} - {self.user}"
-    
-
-class Gallery(models.Model):
-    image = models.ImageField(upload_to='static/images', verbose_name='تصویر', null=True, blank=True)
-    title = models.CharField(max_length=300, verbose_name='عنوان', null=True)
-    author = models.CharField(max_length=200, verbose_name='نویسنده')
-    create_date = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ثبت', null=True)
-
-    class Meta:
-        verbose_name = 'گزارش تصویری'
-        verbose_name_plural = 'گزارش های تصویری'
-
-    def __str__(self):
-        return f"{self.author} - {self.create_date}"
-    
-
-class AboutUs(models.Model):
-    intro_text = models.TextField(verbose_name='متن معرفی', null=True)
-    email = models.EmailField(max_length=100, verbose_name='ایمیل ارتباطی', null=True)
-    phone_number = models.CharField(max_length=100, verbose_name='شماره تلفن ارتباظی', null=True)
-
-    class Meta:
-        verbose_name = 'صفحه درباره'
-        verbose_name_plural = 'مدیریت صفحه درباره'
-
-    def __str__(self):
-        return f"{self.email} - {self.phone_number}"

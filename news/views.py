@@ -1,6 +1,7 @@
 from django.http import HttpRequest, HttpResponse
-from django.views.generic import ListView, DetailView, TemplateView
-from .models import Article, Comment, Gallery, AboutUs
+from django.views.generic import ListView, DetailView
+from .models import Article, Comment
+from  customize.models import Links, Address
 
 class homeListView(ListView):
     template_name = 'index.html'
@@ -25,9 +26,12 @@ class homeListView(ListView):
             "style" : Article.objects.filter(category__url_title="style").filter(is_active=True).order_by('-id')[:4],
             "weather" : Article.objects.filter(category__url_title="weather").filter(is_active=True).order_by('-id')[:4],
             "gallery" : Article.objects.filter(category__url_title="gallery").filter(is_active=True).order_by('-id')[:4],
+            "links" : Links.objects.all().first(),
+            "address" : Address.objects.all().first(),
+
         }
         return myset
-
+    
 
 class WorldListView(ListView):
     template_name = 'news/world.html'
@@ -120,16 +124,6 @@ class WeatherListView(ListView):
         return Article.objects.filter(category__url_title="weather").filter(is_active=True).order_by('-id')
 
 
-class GalleryListView(ListView):
-    template_name = 'news/gallery.html'
-    model = Gallery
-    context_object_name = 'images'
-    ordering = ['created_at']
-
-    def get_queryset(self):
-        return Gallery.objects.all().order_by('-id')
-
-
 class ArticleDetailView(DetailView):
     model = Article
     template_name = 'news/article.html'
@@ -156,13 +150,3 @@ def add_article_comment(request: HttpRequest, **kwargs):
         new_comment.save()
 
     return HttpResponse('response')
-
-
-class AboutUsView(TemplateView):
-    template_name = 'about-us.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(AboutUsView, self).get_context_data(**kwargs)
-        data: AboutUs = AboutUs.objects.all().order_by('id')
-        context['data'] = data
-        return context
