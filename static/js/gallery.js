@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const title = div.querySelector('.gallery_title').innerHTML
 
         active_pic.src = pic
+        active_pic.style.minHeight = "70%"
+        active_pic.style.maxHeight = "70%"
+
         active_title.innerHTML = title
 
         gallery.forEach(function (element) {

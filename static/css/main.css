@@ -477,6 +477,15 @@ img {
   padding: 20px;
 }
 
+.footer-links ul{
+  align-items: center;
+  width: 100%;
+}
+
+.footer-links .social-media-links li{
+  width: 25%;
+}
+
 .footer-links a {
   display: flex;
   justify-content: center;
@@ -488,25 +497,27 @@ img {
  * Social Media Links
  */
 
+.footer-links li a img{
+  max-width: 30%;
+  min-width: 30%;
+}
+
 .social-media-links li a:before {
   font-family: vazir;
   -webkit-font-smoothing: antialiased;
   content: '\f08e';
 }
 
-.social-media-links li a[href*='twitter.com']::before {
-  content: '\f099';
-}
 
-.social-media-links li a[href*='facebook.com']::before {
+.social-media-links li a[href*='rubika.ir']::before {
   content: '\f09a';
 }
 
-.social-media-links li a[href*='linkedin.com']::before {
+.social-media-links li a[href*='eitaa.com']::before {
   content: '\f0e1';
 }
 
-.social-media-links li a[href*='youtube.com']::before {
+.social-media-links li a[href*='bale.ai']::before {
   content: '\f167';
 }
 
@@ -1178,6 +1189,10 @@ input[type='submit'] {
   }
   .user{
     font-size: 13px;
+  }
+  .footer-links li a img{
+    max-width: 50%;
+    min-width: 50%;
   }
 }
 

@@ -14,17 +14,16 @@ class AboutUs(models.Model):
 
 class Links(models.Model):
     insta_urls = models.URLField(max_length=100, verbose_name="لینک اینستاگرام", blank=True)
-    yt_urls = models.URLField(max_length=100, verbose_name="لینک یوتیوب", blank=True)
-    linkedin_urls = models.URLField(max_length=100, verbose_name="لینک لینکداین", blank=True)
-    fb_urls = models.URLField(max_length=100, verbose_name="لینک فیسبوک", blank=True)
-    tt_urls = models.URLField(max_length=100, verbose_name="لینک توییتر", blank=True)
+    rubika_urls = models.URLField(max_length=100, verbose_name="لینک روبیکا", blank=True)
+    bale_urls = models.URLField(max_length=100, verbose_name="لینک بله", blank=True)
+    eita_urls = models.URLField(max_length=100, verbose_name="لینک ایتا", blank=True)
 
     class Meta:
         verbose_name = 'لینک های فوتر'
         verbose_name_plural = 'مدیریت لینک های فوتر'
 
     def __str__(self):
-        return f"{self.fb_urls} - {self.insta_urls}"
+        return f"{self.rubika_urls} - {self.insta_urls}"
     
 class Address(models.Model):
     city = models.CharField(max_length=90, verbose_name='شهر یا منطقه', null=True)

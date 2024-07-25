@@ -5,7 +5,7 @@ class AboutAdmin(admin.ModelAdmin):
     list_display = ["phone_number", "email"]
 
 class LinksAdmin(admin.ModelAdmin):
-    list_display = ["insta_urls", "fb_urls"]
+    list_display = ["insta_urls", "rubika_urls"]
 
 class AddressAdmin(admin.ModelAdmin):
     list_display = ["city", "post_code"]
