@@ -86,9 +86,9 @@
 
         <section class="latest-news">
           <div class="headline">
-            <img src="{% static 'images/sport7.jpg' %}" alt="">
             <p>خبر فوری</p>
             {% for new in news.urgent1 %}
+            <img src="{{ new.cover_image.url }}" alt="">
               <a class="body_color" href="{% url 'article-detail' pk=new.id  %}">
                 <h1 class="color_b">{{ new.title }}</h1>
               </a>
@@ -100,8 +100,8 @@
           <h2 class="content_color2">داغ ترین ها</h2>
 
           <div class="headline body_color">
-            <img src="{% static 'images/world10.jpg' %}" alt="">
             {% for new in news.urgent2 %}
+            <img src="{{ new.cover_image.url }}" alt="">
             <a href="{% url 'article-detail' pk=new.id  %}">
               <h1 class="color_b">{{ new.title }}</h1>
             </a>
@@ -109,8 +109,8 @@
           </div>
 
           <div class="headline body_color">
-            <img src="{% static 'images/world10.jpg' %}" alt="">
             {% for new in news.urgent3 %}
+            <img src="{{ new.cover_image.url }}" alt="">
             <a href="{% url 'article-detail' pk=new.id  %}">
               <h1 class="color_b">{{ new.title }}</h1>
             </a>
@@ -118,8 +118,8 @@
           </div>
 
           <div class="headline body_color">
-            <img src="{% static 'images/world10.jpg' %}" alt="">
             {% for new in news.urgent4 %}
+            <img src="{{ new.cover_image.url }}" alt="">
             <a href="{% url 'article-detail' pk=new.id  %}">
               <h1 class="color_b">{{ new.title }}</h1>
             </a>
@@ -229,75 +229,14 @@
             <div class="slide_container-index" id="slide_container-index">
                 <div id="slides-index" class="slides-index">
 
-                        <div class="slide-index">
-                            <img src="{% static 'images/sport7.jpg' %}">
-                            <div class="news_details-index">
-                              <h3>titlhreourhouvhvburvbryvby</h3>
-                            </div>
-                        </div>
-
-                        <div class="slide-index">
-                            <img src="{% static 'images/sport7.jpg' %}">
-                            <div class="news_details-index">
-                              <h3>titlhreourhouvhvburvbryvby</h3>
-                            </div>
-                        </div>
-
-                        <div class="slide-index">
-                          <img src="{% static 'images/sport7.jpg' %}">
+                  {% if news.imagenews %}
+                      <div class="slide-index">
+                          <img src="{{ news.imagenews.image.url }}">
                           <div class="news_details-index">
-                            <h3>titlhreourhouvhvburvbryvby</h3>
+                            <h3>{{ news.imagenews.title }}</h3>
                           </div>
-                        </div>
-
-                        <div class="slide-index">
-                          <img src="{% static 'images/sport7.jpg' %}">
-                          <div class="news_details-index">
-                            <h3>titlhreourhouvhvburvbryvby</h3>
-                          </div>
-                        </div>
-
-                        <div class="slide-index">
-                            <img src="{% static 'images/sport7.jpg' %}">
-                            <div class="news_details-index">
-                              <h3>title</h3>
-                            </div>
-                        </div>
-
-                        <div class="slide-index">
-                          <img src="{% static 'images/sport7.jpg' %}">
-                          <div class="news_details-index">
-                            <h3>title</h3>
-                          </div>
-                        </div>
-
-                        <div class="slide-index">
-                          <img src="{% static 'images/sport7.jpg' %}">
-                          <div class="news_details-index">
-                            <h3>title</h3>
-                          </div>
-                        </div>
-
-                        <div class="slide-index">
-                          <img src="{% static 'images/sport7.jpg' %}">
-                          <div class="news_details-index">
-                            <h3>title</h3>
-                          </div>
-                        </div>
-
-                        <div class="slide-index">
-                          <img src="{% static 'images/sport7.jpg' %}">
-                          <div class="news_details-index">
-                            <h3>title</h3>
-                          </div>
-                        </div>
-
-                        <div class="slide-index">
-                          <img src="{% static 'images/sport7.jpg' %}">
-                          <div class="news_details-index">
-                            <h3>last title</h3>
-                          </div>
-                        </div>
+                      </div>
+                  {% endif %}
 
                 </div>
             </div>

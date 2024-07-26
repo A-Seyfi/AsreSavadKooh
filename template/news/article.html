@@ -92,7 +92,7 @@
         {% else %}
             <img src="" alt="news">
         {% endif %}
-        <p class="color_b">{{ news.content }}</p>
+        <p class="color_b">{{ news.content | linebreaks}}</p>
 
         <!-- Comments -->
         <div class="comments">
@@ -148,13 +148,6 @@
 
       <ul class="info-links">
         <li><a href="{% url 'about_page' %}" title="About Us">درباره ما</a></li>
-      </ul>
-
-      <ul class="our-address">
-        <li>آدرس ما</li>
-        <li>سوادکوه، زیرآب</li>
-        <li>امامزاده عبدالحق، پلاک ۱</li>
-        <li>۱۲۳-۴۵۶-۷۸۹</li>
       </ul>
 
     </div> <!-- End of class="footer-links" -->
