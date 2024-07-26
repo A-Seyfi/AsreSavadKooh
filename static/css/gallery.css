@@ -180,8 +180,6 @@ main{
 .show_selected_img img{
   min-width: 60%;
   max-width: 60%;
-  /* max-height: 70%;
-  min-height: 70%; */
   border-radius: 0.5vw;
   box-shadow: 0 .1vw 1vw -.1vw rgba(0, 0, 0, .4);
 }
