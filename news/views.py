@@ -2,6 +2,7 @@ from django.http import HttpRequest, HttpResponse
 from django.views.generic import ListView, DetailView
 from .models import Article, Comment
 from  customize.models import Links, Address
+from  gallery.models import ImageNews
 
 class homeListView(ListView):
     template_name = 'index.html'
@@ -28,7 +29,7 @@ class homeListView(ListView):
             "gallery" : Article.objects.filter(category__url_title="gallery").filter(is_active=True).order_by('-id')[:4],
             "links" : Links.objects.all().first(),
             "address" : Address.objects.all().first(),
-
+            "imagenews" : ImageNews.objects.all().first(),
         }
         return myset
     
@@ -147,6 +148,7 @@ def add_article_comment(request: HttpRequest, **kwargs):
         article_id = request.GET.get('article_id')
         # print(article_id, article_comment)
         new_comment = Comment(article_id=article_id, text=article_comment, user=request.user)
-        new_comment.save()
+        if article_comment is not None:
+            new_comment.save()
 
     return HttpResponse('response')
