@@ -1,6 +1,6 @@
 function sendArticleComment(articleId) {
     var comment = $('#commentText').val();
-    // console.log(comment);
+    
     if (comment) {
         $.get('add-article-comment', {
             article_comment: comment,

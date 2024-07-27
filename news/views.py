@@ -29,7 +29,7 @@ class homeListView(ListView):
             "gallery" : Article.objects.filter(category__url_title="gallery").filter(is_active=True).order_by('-id')[:4],
             "links" : Links.objects.all().first(),
             "address" : Address.objects.all().first(),
-            "imagenews" : ImageNews.objects.all().first(),
+            "imagenews" : ImageNews.objects.all()
         }
         return myset
     

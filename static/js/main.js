@@ -2,6 +2,7 @@
 
 const navSlide = () => {
   const burger = document.querySelector('.burger');
+  const logo = document.getElementById('logo')
   const nav = document.querySelector('.nav-links');
   const navLinks = document.querySelectorAll('.nav-links li');
 
@@ -30,8 +31,6 @@ navSlide();
 // Drop-down Menu Animation
 
 (function($) {
-  // Drastically modified from the function in the WordPress Twenty Fifteen theme
-  // Original source: https://github.com/WordPress/WordPress/blob/master/wp-content/themes/twentyfifteen/js/functions.js
 
   $('.dropdown-toggle').click(function(e) {
     var _this = $(this);

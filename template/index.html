@@ -25,14 +25,20 @@
 
   <div class="content-wrap main_color">
 
-
+    
     <!-- Header -->
     <header role="banner">
-
+      
       <section class="nav-section content_color1">
-
+        <div class="burger" id="burger">
+          <div class="line-1"></div>
+          <div class="line-2"></div>
+          <div class="line-3"></div>
+        </div>
+        
         <!-- Logo -->
-        <div class="logo">
+
+        <div class="logo" id="logo">
           <a href="{% url 'home_page' %}" title="Frivizn logo">سوادکوه نیوز</a>
         </div>
 
@@ -69,11 +75,6 @@
               </ul>
             </li>
           </ul>
-          <div class="burger">
-            <div class="line-1"></div>
-            <div class="line-2"></div>
-            <div class="line-3"></div>
-          </div>
         </nav>
       </section> <!-- end of class="nav-section"-->
 
@@ -228,35 +229,35 @@
         <div class="main_container-index">
             <div class="slide_container-index" id="slide_container-index">
                 <div id="slides-index" class="slides-index">
-
-                  {% if news.imagenews %}
-                      <div class="slide-index">
-                          <img src="{{ news.imagenews.image.url }}">
-                          <div class="news_details-index">
-                            <h3>{{ news.imagenews.title }}</h3>
-                          </div>
-                      </div>
-                  {% endif %}
-
+                  {% for imnw in news.imagenews %}
+                    {% if imnw %}
+                        <div class="slide-index">
+                            <img src="{{ imnw.image.url }}">
+                            <div class="news_details-index">
+                              <h3>{{ imnw.title }}</h3>
+                            </div>
+                        </div>
+                    {% endif %}
+                  {% endfor %}
                 </div>
             </div>
         </div>
       </section>
-
+      
     </main> <!-- End of class="main" -->
-
+    
     <!-- Footer Links -->
     <div class="footer-links content_color1">
-
+      
       {% if news.links %}
-        <ul class="social-media-links">
-          <li><a href="{{ news.links.eita_urls }}"><img src="{% static 'images/eitaa.png' %}" alt=""><span class="screen-reader-text">ایتا</span></a></li>
-          <li><a href="{{ news.links.bale_urls }}"><img src="{% static 'images/bale.png' %}" alt=""><span class="screen-reader-text">بله</span></a></li>
-          <li><a href="{{ news.links.rubika_urls }}"><img src="{% static 'images/rubika.png' %}" alt=""><span class="screen-reader-text">روبیکا</span></a></li>
-          <li><a href="{{ news.links.insta_urls }}"><img src="{% static 'images/instagram.png' %}" alt=""><span class="screen-reader-text">اینستاگرام</span></a></li>
-        </ul>
+      <ul class="social-media-links">
+        <li><a href="{{ news.links.eita_urls }}"><img src="{% static 'images/eitaa.png' %}" alt=""><span class="screen-reader-text">ایتا</span></a></li>
+        <li><a href="{{ news.links.bale_urls }}"><img src="{% static 'images/bale.png' %}" alt=""><span class="screen-reader-text">بله</span></a></li>
+        <li><a href="{{ news.links.rubika_urls }}"><img src="{% static 'images/rubika.png' %}" alt=""><span class="screen-reader-text">روبیکا</span></a></li>
+        <li><a href="{{ news.links.insta_urls }}"><img src="{% static 'images/instagram.png' %}" alt=""><span class="screen-reader-text">اینستاگرام</span></a></li>
+      </ul>
       {% endif %}
-
+      
       <ul class="main-footer-links">
         <li><a href="{% url 'world-page' %}" title="world">بین الملل</a></li>
         <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
@@ -270,11 +271,12 @@
         <li><a href="{% url 'weather-page' %}" title="Weather">آب و هوا</a></li>
         <li><a href="{% url 'gallery-page' %}" title="Video">گالری</a></li>
       </ul>
-
+      
       <ul class="info-links">
         <li><a href="{% url 'about_page' %}" title="About Us">درباره ما</a></li>
+        <img src="{% static 'images/logo.jpg' %}" alt="">
       </ul>
-
+      
       {% if news.address %}
       <ul class="our-address">
         <li>آدرس ما :</li>
@@ -283,6 +285,7 @@
         <li>{{ news.address.post_code }}</li>
       </ul>
       {% endif %}
+
 
     </div> <!-- End of class="footer-links" -->
 

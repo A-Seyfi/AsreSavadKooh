@@ -51,6 +51,7 @@
             {% else %}
               <li><a href="{% url 'register_page' %}" title="register">ورود / ثبت نام</a></li>
             {% endif %}
+            <li><a href="{% url 'home_page' %}" title="Home">خانه</a></li>
             <li><a href="{% url 'world-page' %}" title="Business">بین الملل</a></li>
             <li><a href="{% url 'politics-page' %}" title="Politics">سیاست</a></li>
             <li><a href="{% url 'economy-page' %}" title="Business">اقتصاد</a></li>
@@ -82,7 +83,7 @@
     <!-- Main -->
     <main class="main-article" role="main">
 
-      <article class="article">
+      <article class="article color_b">
 
         <h2 class="color_b">{{ news.title }}</h2>
         <p class="color_b"><small>{{ news.created_at | to_jalali }}</small><br> نوشته {{ news.author }}</p>
@@ -119,7 +120,7 @@
                 <input type="submit" value="ثبت نظر" onclick="sendArticleComment({{ news.id }})">
           </div> 
         {% else %}
-          <div class="alert alert-warning">
+          <div class="alert alert-warning color_b">
             برای درج نظر می بایست <a href="{% url 'login_page' %}">لاگین</a> کنید
           </div>
         {% endif %}
@@ -149,6 +150,8 @@
       <ul class="info-links">
         <li><a href="{% url 'about_page' %}" title="About Us">درباره ما</a></li>
       </ul>
+
+      <img class="footer-logo" src="{% static 'images/logo.jpg' %}" alt="">
 
     </div> <!-- End of class="footer-links" -->
 

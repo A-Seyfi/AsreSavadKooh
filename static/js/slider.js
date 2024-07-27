@@ -14,4 +14,4 @@ setInterval(() => {
    if(value == translate * (slide - 1)){
       value = 0
    }
-}, 1800);
+}, 4000);
