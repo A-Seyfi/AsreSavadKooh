@@ -1,3 +1,11 @@
+@font-face {
+    font-family: vazir;
+    src: url(../vazir-font-v16.1.0/Vazir-Light.woff);
+  }
+*{
+    font-family: vazir;
+    word-wrap: break-word;
+}
 .logo{
     width: 8%;
 }

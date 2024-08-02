@@ -8,14 +8,6 @@
 }
 
 
-/*
- * Ken burns - 404 Page
- * Build Date: October 2016
- * Author: joashp
- */
-
-
-/* custom CSS files */
 
 @import url(common/font-awesome.min.css);
 @import url(common/ionicons.min.css);
@@ -24,11 +16,6 @@
 @import url(common/vegas.css);
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
-/*
-* http://meyerweb.com/eric/tools/css/reset/ 
-* v2.0 | 20110126
-* License: none (public domain)
-*/
 
 html,
 body,
@@ -120,7 +107,6 @@ video {
 }
 
 
-/* HTML5 display-role reset for older browsers */
 
 article,
 aside,
@@ -165,10 +151,8 @@ table {
 }
 
 
-/* ---------------slideshow 404 style---------------------- */
 
 body {
-    font-family: vazir;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-overflow-scrolling: touch;
@@ -215,7 +199,6 @@ a:focus {
     position: fixed;
     top: 50%;
     left: 50%;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);
     z-index: 9;
 }
